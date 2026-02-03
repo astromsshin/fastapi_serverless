@@ -7,7 +7,7 @@ from mangum import Mangum
 
 import mlmodel as ml
 
-outfn = "test.log"
+modelfilename = "gmm_pipeline_20250601_20250630.joblib"
 
 class UserData(BaseModel):
   DVPercent: float
@@ -26,7 +26,7 @@ handler = Mangum(app)
 
 @app.on_event('startup')
 async def load_model():
-  ml.inferengine = load("gmm_pipeline_20250621_20250621.joblib")
+  ml.inferengine = load(modelfilename)
 
 # Define a simple GET endpoint
 @app.get("/")
