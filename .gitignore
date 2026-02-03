@@ -2,3 +2,5 @@ dependencies
 dependencies/*
 __pycache__
 __pycache__/*
+*.json
+*.joblib
